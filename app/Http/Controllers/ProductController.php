@@ -51,6 +51,21 @@ class ProductController extends Controller
             'data' => $product
         ];
     }
+    
+    public function getProducts(){
+        if(!$products = $this->product->all()){
+            return [
+                "status" => "Failed",
+                "message" => "No product found"
+            ];
+        }
+
+        return [
+            "status" => "success",
+            "message" => "Products found",
+            "data" => $products
+        ];
+    }
 
     public function updateProduct($productId, Request $request){
         if(!$product = $this->product->find($productId)){
