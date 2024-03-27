@@ -11,13 +11,13 @@ class ProductController extends Controller
     public function __construct(protected Product $product){}
 
     public function createProduct(ProductRequest $request){
-         $request->validated();
+        $request->validated();
 
         $productDetails = [
             'name' => $request->input('name'),
             'description' => $request->input('description'),
             'price' => $request->input('price'),
-            'quanity' => $request->input('quanity'),
+            'quantity' => $request->input('quantity'),
         ];
 
         if(!$this->product->create($productDetails)){
