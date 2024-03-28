@@ -31,7 +31,7 @@ class ProductController extends Controller
         return [
             'status' => 'success',
             'status_code' => 200,
-            'message' => 'product product was not created'
+            'message' => 'product creation successful'
         ];
     }
 
@@ -77,8 +77,10 @@ class ProductController extends Controller
         }
 
         $productDetails = [
-            'title'=> $request->title,
-            'body'=> $request->body,
+            'name'=> $request->name,
+            'decription'=> $request->decription,
+            'price'=> $request->price,
+            'quantity'=> $request->quantity,
         ];
 
 
